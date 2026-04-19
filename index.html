@@ -70,7 +70,7 @@
     transition: background 0.3s;
   }
   .site-header.scrolled { background: rgba(6,15,24,0.96); }
-  .header-logo img { height: 36px; display: block; }
+  .header-logo img { height: 52px; display: block; }
   .header-logo-text {
     font-family: var(--font-title);
     font-size: 13px;
@@ -505,6 +505,8 @@
     cursor: pointer;
     transition: background 0.2s;
     position: relative;
+    min-width: 0;
+    overflow: hidden;
   }
   .company-card:hover { background: var(--off-white); }
   .company-card.open { background: var(--off-white); }
@@ -513,6 +515,27 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
+    min-width: 0;
+  }
+  .company-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    flex: 1;
+  }
+  .company-logo {
+    height: 26px;
+    width: auto;
+    max-width: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  @media(max-width:700px){
+    .company-logo { max-width: 48px; height: 20px; }
+    .company-card { padding: 22px 16px; }
+    .company-card .company-name { font-size: 15px; }
+    .company-logo-wrap { gap: 8px; }
   }
   .company-name {
     font-family: var(--font-title);
@@ -1015,25 +1038,37 @@
       <div class="companies-row companies-row-1" id="row1">
         <div class="company-card" data-company="aryon">
           <div class="company-card-inner">
-            <span class="company-name">Aryon</span>
+            <div class="company-logo-wrap">
+              <img src="aryon_logo.png" alt="Aryon" class="company-logo">
+              <span class="company-name">Aryon</span>
+            </div>
             <div class="company-toggle">+</div>
           </div>
         </div>
         <div class="company-card" data-company="predict">
           <div class="company-card-inner">
-            <span class="company-name">Predict</span>
+            <div class="company-logo-wrap">
+              <img src="predict_logo.png" alt="Predict" class="company-logo">
+              <span class="company-name">Predict</span>
+            </div>
             <div class="company-toggle">+</div>
           </div>
         </div>
         <div class="company-card" data-company="onelayer">
           <div class="company-card-inner">
-            <span class="company-name">OneLayer</span>
+            <div class="company-logo-wrap">
+              <img src="onelayer_logo.png" alt="OneLayer" class="company-logo">
+              <span class="company-name">OneLayer</span>
+            </div>
             <div class="company-toggle">+</div>
           </div>
         </div>
         <div class="company-card" data-company="plainid">
           <div class="company-card-inner">
-            <span class="company-name">PlainID</span>
+            <div class="company-logo-wrap">
+              <img src="plain_id_logo.svg" alt="PlainID" class="company-logo">
+              <span class="company-name">PlainID</span>
+            </div>
             <div class="company-toggle">+</div>
           </div>
         </div>
@@ -1080,8 +1115,8 @@
       <div class="companies-row companies-row-2" id="row2">
         <div class="company-card" data-company="addressable">
           <div class="company-card-inner">
-            <div style="display:flex; align-items:center; gap:12px;">
-              <img src="Addressabla_logo.png" alt="Addressable" style="height:24px;">
+            <div class="company-logo-wrap">
+              <img src="Addressabla_logo.png" alt="Addressable" class="company-logo">
               <span class="company-name">Addressable</span>
             </div>
             <div class="company-toggle">+</div>
@@ -1089,19 +1124,28 @@
         </div>
         <div class="company-card" data-company="foundational">
           <div class="company-card-inner">
-            <span class="company-name">Foundational</span>
+            <div class="company-logo-wrap">
+              <img src="foundational_logo.png" alt="Foundational" class="company-logo">
+              <span class="company-name">Foundational</span>
+            </div>
             <div class="company-toggle">+</div>
           </div>
         </div>
         <div class="company-card" data-company="cardinalops">
           <div class="company-card-inner">
-            <span class="company-name">CardinalOps</span>
+            <div class="company-logo-wrap">
+              <img src="CardinalOps_logo.png" alt="CardinalOps" class="company-logo">
+              <span class="company-name">CardinalOps</span>
+            </div>
             <div class="company-toggle">+</div>
           </div>
         </div>
         <div class="company-card" data-company="faddom">
           <div class="company-card-inner">
-            <span class="company-name">Faddom</span>
+            <div class="company-logo-wrap">
+              <img src="faddom_logo.svg" alt="Faddom" class="company-logo">
+              <span class="company-name">Faddom</span>
+            </div>
             <div class="company-toggle">+</div>
           </div>
         </div>
@@ -1158,8 +1202,7 @@
     <div class="about-inner">
       <div class="about-left reveal">
         <div class="about-logo-block">
-          <div class="about-viola-v"></div>
-          <div class="about-logo-text">Viola<br>Ventures</div>
+          <img src="vv_blue_logo.svg" alt="Viola Ventures" style="height:52px;">
         </div>
         <h2 class="about-heading">About<br>Viola<br><em>Ventures</em></h2>
         <div class="about-divider"></div>
